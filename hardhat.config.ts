@@ -16,9 +16,9 @@ module.exports = {
   mocha: {
     timeout: 100000000,
   },
-  // etherscan: {
-  //   apiKey: process.env.API_KEY,
-  // },
+  etherscan: {
+    apiKey: process.env.API_TOKEN,
+  },
   networks: {
     hardhat: {
       blockGasLimit: 20000000,
@@ -28,13 +28,13 @@ module.exports = {
     localhost: {
       timeout: 8000000,
     },
-    // goerli: {
-    //   url: process.env.GOERLI_URL,
-    //   accounts: [process.env.PRIVATE],
-    //   blockGasLimit: 200000000000,
-    //   gasPrice: 10000000000,
-    //   timeout: 90000,
-    // },
+    goerli: {
+      url: process.env.GOERLI_API_KEY,
+      accounts: [process.env.PRIVATE_KEY],
+      blockGasLimit: 200000000000,
+      gasPrice: 10000000000,
+      timeout: 90000,
+    },
   },
   gasReporter: {
     currency: "USD",

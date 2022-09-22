@@ -1,6 +1,9 @@
 /* global ethers */
 /* eslint prefer-const: "off" */
 
+// DiamondCutFacet deployed: 0x3496292CE39296922597f16BfE3b4c79bF0D3791
+// Diamond deployed: 0x3472f1854E44e7015a892D1F4F4e39Dc25FA1b79
+
 import { ContractReceipt, Transaction } from "ethers";
 import { TransactionDescription, TransactionTypes } from "ethers/lib/utils";
 import { ethers } from "hardhat";
@@ -41,7 +44,7 @@ export async function deployDiamond() {
   // deploy facets
   console.log("");
   console.log("Deploying facets");
-  const FacetNames = ["DiamondLoupeFacet", "OwnershipFacet", "ERC721URIStorage"];
+  const FacetNames = ["DiamondLoupeFacet", "OwnershipFacet", "NFTToken"];
   const cut = [];
   for (const FacetName of FacetNames) {
     const Facet = await ethers.getContractFactory(FacetName);
